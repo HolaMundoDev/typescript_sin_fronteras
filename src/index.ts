@@ -1,9 +1,11 @@
 class Personaje {
   //estos valores iniciales son ignorados
-  id: number
+  readonly id: number
   name: string
   level: number
   private _hp: number
+  profession?: string
+
   constructor(
     id: number,
     name: string,
