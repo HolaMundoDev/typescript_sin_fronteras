@@ -3,7 +3,7 @@ class Personaje {
   id: number
   name: string
   level: number
-  hp: number
+  private _hp: number
   constructor(
     id: number,
     name: string,
@@ -13,7 +13,7 @@ class Personaje {
     this.id = id
     this.name = name
     this.level = level
-    this.hp = hp
+    this._hp = hp
   }
 
   subirNivel() {
@@ -22,8 +22,9 @@ class Personaje {
   }
 
   cambiarHP(cantidad: number): number {
-    this.hp += cantidad
-    return this.hp
+    this._hp += cantidad
+    // No pasar del máximo
+    return this._hp
   }
 
 }
@@ -33,10 +34,10 @@ personaje.subirNivel()
 personaje.cambiarHP(100)
 console.log(personaje)
 
-if (typeof personaje) {
+// if (typeof personaje) {
 
-}
+// }
 
-if (personaje instanceof Personaje) {
+// if (personaje instanceof Personaje) {
 
-}
+// }
