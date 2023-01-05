@@ -19,12 +19,17 @@ class Personaje {
     return this._hp
   }
 
+  get hp(): number {
+    return this._hp
+  }
+
 }
 
 const personaje = new Personaje(1, 'Goku', 100, 0)
 personaje.subirNivel()
 personaje.cambiarHP(100)
-console.log(personaje)
+console.log(personaje.hp)
+
 
 // if (typeof personaje) {
 
