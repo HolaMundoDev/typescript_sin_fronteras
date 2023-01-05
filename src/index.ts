@@ -1,22 +1,12 @@
 class Personaje {
-  //estos valores iniciales son ignorados
-  readonly id: number
-  name: string
-  level: number
-  private _hp: number
   profession?: string
 
   constructor(
-    id: number,
-    name: string,
-    level: number,
-    hp: number
-  ) {
-    this.id = id
-    this.name = name
-    this.level = level
-    this._hp = hp
-  }
+    public readonly id: number,
+    public name: string,
+    public level: number,
+    private _hp: number
+  ) { }
 
   subirNivel() {
     this.level++
