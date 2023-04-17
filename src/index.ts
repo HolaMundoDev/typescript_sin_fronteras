@@ -21,5 +21,8 @@ let animales: string[] = ["Chanchito", "Feliz", "Felipe"]
 let nums: number[] = [1, 2, 3]
 let checks: boolean[] = []
 let nums2: Array<number> = []
-animales.map(x => x)
-nums.map(x => x)
+// animales.map(x => x)
+// nums.map(x => x)
+
+let tupla: [number, string[]] = [1, ["chanchito feliz"]]
+tupla.push(12)
