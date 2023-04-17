@@ -16,3 +16,10 @@ miVariable = 100;
 function chanchitoFeliz(config: any) {
   return config
 }
+
+let animales: string[] = ["Chanchito", "Feliz", "Felipe"]
+let nums: number[] = [1, 2, 3]
+let checks: boolean[] = []
+let nums2: Array<number> = []
+animales.map(x => x)
+nums.map(x => x)
