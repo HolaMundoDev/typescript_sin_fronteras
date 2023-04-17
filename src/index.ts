@@ -10,3 +10,9 @@ let dinosauioFavorito: string = "Tyrannosaurus Rex";
 let extintos = true;
 
 let miVariable
+miVariable = "Chanchito Feliz";
+miVariable = 100;
+
+function chanchitoFeliz(config: any) {
+  return config
+}
