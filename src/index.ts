@@ -24,5 +24,40 @@ let nums2: Array<number> = []
 // animales.map(x => x)
 // nums.map(x => x)
 
-let tupla: [number, string[]] = [1, ["chanchito feliz"]]
+let tupla: [number, string[]] = [1, ["chanchito feliz"]] //solo se puede agregar un string y un numero
 tupla.push(12)
+
+// enum
+
+enum Talla { Chica = "s", Mediana = "m", Grande = "l", ExtraGrande = "xl" }
+const variable1 = Talla.Grande
+console.log(variable1)
+
+const enum LoadingState { Idle, Loading, Success, Error } // se le coloca const para que no se cree un objeto en el js si no que se le asignará el valor a las variables como la siguiente linea:
+const estado = LoadingState.Success // 1
+
+type Direccion = {
+  numero: number,
+  calle: string,
+  pais: string
+}
+
+type Persona = {
+  readonly id: number,
+  nombre?: string
+  talla: Talla
+  direccion: Direccion
+}
+
+const objeto: Persona = {
+  id: 1,
+  nombre: "Hola Mundo",
+  talla: Talla.Chica,
+  direccion: {
+    numero: 1,
+    calle: "Calle 1",
+    pais: "Colombia"
+  }
+}
+
+const arr: Persona[] = []
