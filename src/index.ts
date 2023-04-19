@@ -61,3 +61,20 @@ const objeto: Persona = {
 }
 
 const arr: Persona[] = []
+
+const fn: (a: number) => string = (edad: number) => {
+  if (edad > 17) {
+    return "Puedes ingresar"
+  }
+  return "No Puedes ingresar"
+}
+
+function validaEdad(edad: number, msg: string = "Chanchito Feliz"): string {
+  if (edad > 17) {
+    return `Puedes ingresar ${msg}`
+  }
+  return "No Puedes ingresar"
+}
+
+
+validaEdad(18)
