@@ -78,3 +78,7 @@ function validaEdad(edad: number, msg: string = "Chanchito Feliz"): string {
 
 
 validaEdad(18)
+
+function ErrorUsuario(): never {
+  throw new Error("error de usuario")
+}
