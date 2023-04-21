@@ -63,13 +63,6 @@ function ErrorUsuario() {
 let puntaje = 98;
 puntaje = "hola mundo";
 let animal = { id: 1, estado: "", name: "" };
-function sumaDos(n) {
-    if (typeof n === "number") {
-        n + 2;
-    }
-    return parseInt(n) + 2;
-}
-sumaDos("2");
 const product = {
     name: "Chanchito Feliz",
     created_at: "",
@@ -77,7 +70,26 @@ const product = {
 };
 const nDeFibo = 3;
 function toNumber(s) {
+    if (!s) {
+        return 0;
+    }
     return parseInt(s);
 }
 const n = toNumber(null);
+function getUser(id) {
+    if (id < 0) {
+        return null;
+    }
+    return { id: 1, name: "Felipe", created_at: new Date() };
+}
+const user = getUser(1);
+console.log("usuario", user === null || user === void 0 ? void 0 : user.created_at);
+if (user && user.created_at) {
+    console.log(user.created_at);
+}
+const arr1 = null;
+arr1 === null || arr1 === void 0 ? void 0 : arr1[0];
+console.log(arr1 === null || arr1 === void 0 ? void 0 : arr1[0]);
+const fn5 = null;
+fn5 === null || fn5 === void 0 ? void 0 : fn5();
 //# sourceMappingURL=index.js.map

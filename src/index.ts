@@ -100,14 +100,14 @@ type Usuario = {
 
 let animal: Usuario | Animal = { id: 1, estado: "", name: "" }
 
-function sumaDos(n: number | string): number {
-  if (typeof n === "number") {
-    n + 2
-  }
-  return parseInt(n) + 2
-}
+// function sumaDos(n: number | string): number {
+//   if (typeof n === "number") {
+//     n + 2
+//   }
+//   return parseInt(n) + 2
+// }
 
-sumaDos("2")
+// sumaDos("2")
 
 
 // Intersection Types
@@ -139,3 +139,33 @@ function toNumber(s: string | null | undefined) {
 }
 
 const n = toNumber(null)
+
+function getUser(id: number) {
+  if (id < 0) {
+    return null
+  }
+  return { id: 1, name: "Felipe", created_at: new Date() }
+}
+
+const user = getUser(1)
+
+console.log("usuario", user?.created_at)
+
+if (user && user.created_at) {
+  console.log(user.created_at)
+}
+
+const arr1 = null
+arr1?.[0]
+
+console.log(arr1?.[0])
+
+const fn5: any = null
+
+console.log(fn5?.())
+
+function cb(fn: () => void) {
+  if (fn) {
+    fn()
+  }
+}
