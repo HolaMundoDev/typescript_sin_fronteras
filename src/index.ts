@@ -169,3 +169,12 @@ function cb(fn: () => void) {
     fn()
   }
 }
+
+//nullish coalescing operator
+const difficulty: number | null = 0
+const user2 = {
+  username: "Chanchito feliz",
+  difficulty: difficulty && 1
+}
+
+console.log(user2)
