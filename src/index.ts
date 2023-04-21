@@ -130,3 +130,12 @@ const product: Audit & Product = {
 
 type fibo = 0 | 1 | 2 | 3 | 5
 const nDeFibo: fibo = 3
+
+function toNumber(s: string | null | undefined) {
+  if (!s) {
+    return 0
+  }
+  return parseInt(s)
+}
+
+const n = toNumber(null)
