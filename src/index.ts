@@ -125,3 +125,8 @@ const product: Audit & Product = {
   created_at: "",
   modified_at: ""
 }
+
+// Literal types
+
+type fibo = 0 | 1 | 2 | 3 | 5
+const nDeFibo: fibo = 3
