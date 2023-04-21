@@ -83,6 +83,8 @@ function ErrorUsuario(): never {
   throw new Error("error de usuario")
 }
 
+
+// Union Types
 let puntaje: number | string = 98
 puntaje = "hola mundo"
 
@@ -106,3 +108,20 @@ function sumaDos(n: number | string): number {
 }
 
 sumaDos("2")
+
+
+// Intersection Types
+type Audit = {
+  created_at: string,
+  modified_at: string
+}
+
+type Product = {
+  name: string,
+}
+
+const product: Audit & Product = {
+  name: "Chanchito Feliz",
+  created_at: "",
+  modified_at: ""
+}
