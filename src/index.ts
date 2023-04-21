@@ -82,3 +82,27 @@ validaEdad(18)
 function ErrorUsuario(): never {
   throw new Error("error de usuario")
 }
+
+let puntaje: number | string = 98
+puntaje = "hola mundo"
+
+type Animal = {
+  id: number,
+  estado: string
+}
+
+type Usuario = {
+  id: number,
+  name: string
+}
+
+let animal: Usuario | Animal = { id: 1, estado: "", name: "" }
+
+function sumaDos(n: number | string): number {
+  if (typeof n === "number") {
+    n + 2
+  }
+  return parseInt(n) + 2
+}
+
+sumaDos("2")
