@@ -186,3 +186,13 @@ const elem1 = elem as number
 const input = <HTMLInputElement>document.getElementById("username")
 
 input.value
+
+function lala(x: string | number) {
+  //Type narrowing
+  if (typeof x === "number") {
+    x.toExponential()
+  }
+  if (typeof x === "string") {
+    x.toUpperCase()
+  }
+}
