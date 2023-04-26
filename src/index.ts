@@ -196,3 +196,21 @@ function lala(x: string | number) {
     x.toUpperCase()
   }
 }
+
+// Type unknown
+
+function procesa(algo: unknown) {
+  if (typeof algo === "string") {
+    return algo.toUpperCase()
+  }
+
+  if (typeof algo === "number") {
+    return algo.toFixed()
+  }
+  if (algo instanceof String) {
+
+  }
+  // algo.haceCosas()
+  // algo.otrasCosas()
+  // algo.genkidama()
+}
