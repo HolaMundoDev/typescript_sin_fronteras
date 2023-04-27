@@ -9,6 +9,10 @@ class DatosBasicos {
   get fullYear() {
     return this.created_at.getFullYear();
   }
+
+  get fullDesc() {
+    return `${this.name} ${this.desc}`;
+  }
 }
 
 class Producto extends DatosBasicos {
@@ -21,6 +25,10 @@ class Producto extends DatosBasicos {
     updated_by: number
   ) {
     super(name, desc, created_at, updated_by);
+  }
+
+  override get fullDesc() {
+    return "Producto: " + super.fullDesc;
   }
 }
 
@@ -39,6 +47,10 @@ class Categoria extends DatosBasicos {
 
   agregarProducto(producto: Producto) {
     this.productos.push(producto);
+  }
+
+  override get fullDesc() {
+    return "Categoría: " + super.fullDesc;
   }
 }
 
@@ -59,4 +71,4 @@ let categoria = new Categoria(
 )
 
 categoria.agregarProducto(producto1);
-console.log(producto1, categoria);
+console.log(producto1.fullDesc, categoria.fullDesc);
