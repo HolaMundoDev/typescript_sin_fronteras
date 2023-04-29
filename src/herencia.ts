@@ -1,4 +1,4 @@
-class DatosBasicos {
+abstract class DatosBasicos {
   constructor(
     public name: string,
     public desc: string,
@@ -13,6 +13,8 @@ class DatosBasicos {
   get fullDesc() {
     return `${this.name} ${this.desc}`;
   }
+
+  abstract guardar(): void;
 }
 
 class Producto extends DatosBasicos {
@@ -29,6 +31,10 @@ class Producto extends DatosBasicos {
 
   override get fullDesc() {
     return "Producto: " + super.fullDesc;
+  }
+
+  guardar(): void {
+    console.log("Guardando producto...");
   }
 }
 
@@ -52,6 +58,10 @@ class Categoria extends DatosBasicos {
   override get fullDesc() {
     return "Categoría: " + super.fullDesc;
   }
+
+  guardar(): void {
+    console.log("Guardando categoria...");
+  }
 }
 
 let producto1 = new Producto(
@@ -72,3 +82,5 @@ let categoria = new Categoria(
 
 categoria.agregarProducto(producto1);
 console.log(producto1.fullDesc, categoria.fullDesc);
+
+// let datos = new DatosBasicos("dato 1", "desc", new Date(), 1) //No es posible instanciar una clase abstracta
