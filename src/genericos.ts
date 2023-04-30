@@ -28,8 +28,26 @@ type User = {
   name: string;
 }
 
+
 async function main() {
   const user = await fetchData<User>('/usuarios');
   // user.id
   // user.name
 }
+
+type Computador = {
+  encender: () => void;
+  apagar: () => void;
+}
+class Programador<T> {
+  computador: T
+  constructor(t: T) {
+    this.computador = t
+  }
+}
+
+const programador = new Programador<Computador>({ encender: () => { }, apagar: () => { } });
+const programador1 = new Programador<string>("Hola");
+
+programador.computador.apagar();
+programador1.computador.toLocaleLowerCase();
