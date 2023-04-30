@@ -1,0 +1,35 @@
+// function log(a: string, b: string) {
+//   console.log(a, b);
+// }
+
+// function logN(a: string, b: number) {
+//   console.log(a, b);
+// }
+
+function log<T, V>(a: T, b: V): V {
+  console.log(a, b);
+  return b;
+}
+
+
+
+log<string, number>("dato", 42);
+log<string, string>("dato", "Chanchito feliz");
+log("Saludo", "Hola Mundo");
+
+async function fetchData<T>(recurso: string): Promise<T> {
+  const response = await fetch(recurso);
+  const data = await response.json();
+  return data;
+}
+
+type User = {
+  id: string;
+  name: string;
+}
+
+async function main() {
+  const user = await fetchData<User>('/usuarios');
+  // user.id
+  // user.name
+}
