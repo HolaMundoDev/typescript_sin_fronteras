@@ -39,3 +39,14 @@ class Perro implements Animal {
     return "Guau";
   }
 }
+
+class DiccionarioUsuarios {
+  [id: string]: string;
+}
+
+let diccionarioUsuarios = new DiccionarioUsuarios();
+diccionarioUsuarios.a1 = "usuario1"
+diccionarioUsuarios["1a"] = "usuario2"
+
+console.log(diccionarioUsuarios);
+
