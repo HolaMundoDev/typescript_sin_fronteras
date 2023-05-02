@@ -86,3 +86,40 @@ function print<T extends Usuario>(t: T): T {
 // print(42) // Error
 // print({ name: 'Felipe' }) // Error
 print({ id: 'user_id', name: 'Felipe', })
+
+// Pasar el genérico
+class Estado<T> {
+  protected data: T[] = [];
+
+  agregar(t: T): void {
+    this.data.push(t);
+  }
+
+  getEstado(): T[] {
+    return this.data;
+  }
+}
+
+type ObjectId = {
+  id: string;
+}
+
+// Pasar el genérico con restricciones
+class EstadoEliminar<T extends ObjectId> extends Estado<T>{
+  eliminar(id: string): void {
+    this.data = this.data.filter(x => x.id !== id);
+  }
+}
+
+const estadoEliminar = new EstadoEliminar<Usuario>();
+// estadoEliminar.agregar({ id: '1' });
+// estadoEliminar.getEstado();
+// estadoEliminar.eliminar('1');
+
+
+// pasar el genérico fijo
+class EstadoUsuario extends Estado<Usuario>{
+  reiniciarContraseñas(): {
+    //
+  }
+}
