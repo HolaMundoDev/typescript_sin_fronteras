@@ -49,8 +49,8 @@ class Programador<T> {
 const programador = new Programador<Computador>({ encender: () => { }, apagar: () => { } });
 const programador1 = new Programador<string>("Hola");
 
-programador.computador.apagar();
-programador1.computador.toLocaleLowerCase();
+// programador.computador.apagar();
+// programador1.computador.toLocaleLowerCase();
 
 interface KeyValue<T, V> {
   key: T;
@@ -68,3 +68,21 @@ function fetchProduct(): KeyValue<string, Product> {
 function fetchStock(): KeyValue<string, number> {
   return { key: 'id del producto', value: 20 }
 }
+
+// interface Usuario {
+//   id: string;
+//   name: string;
+// }
+
+class Usuario {
+  constructor(public id: string) { }
+}
+
+function print<T extends Usuario>(t: T): T {
+  console.log(t);
+  return t;
+}
+
+// print(42) // Error
+// print({ name: 'Felipe' }) // Error
+print({ id: 'user_id', name: 'Felipe', })
