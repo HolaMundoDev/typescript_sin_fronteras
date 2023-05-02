@@ -51,3 +51,20 @@ const programador1 = new Programador<string>("Hola");
 
 programador.computador.apagar();
 programador1.computador.toLocaleLowerCase();
+
+interface KeyValue<T, V> {
+  key: T;
+  value: V;
+}
+
+interface Product {
+  id: string
+}
+
+function fetchProduct(): KeyValue<string, Product> {
+  return { key: 'id del producto', value: { id: 'id del producto' } }
+}
+
+function fetchStock(): KeyValue<string, number> {
+  return { key: 'id del producto', value: 20 }
+}
