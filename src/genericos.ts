@@ -138,3 +138,38 @@ function getProp<T>(objeto: T, property: keyof T): unknown {
 getProp<Calendar>(calendar, 'id');
 getProp<Calendar>(calendar, 'fuente');
 // getProp<Calendar>(calendar, 'propiedadQueNoExiste'); // Error
+
+type Punto = {
+  x: number;
+  y: number;
+  desc?: string;
+}
+
+// Utility types
+type PuntoOptional = Partial<Punto>  // todas las propiedades son opcionales
+type PuntoRequired = Required<Punto> // todas las propiedades son requeridas
+
+const KeyVal: Record<string, number> = {
+  "soy un string": 42
+}
+
+// type kv = { [key: string]: number } // equivalente a Record<string, number>
+
+const p: Omit<Punto, "desc" | "y"> = {
+  x: 1,
+  // y: 2, // Error
+}
+
+const p1: Pick<Punto, "x" | "y"> = {
+  x: 1,
+  y: 2,
+  // desc: "hola", // Error
+}
+
+const readOnlyP: Readonly<Punto> = {
+  x: 1,
+  y: 3,
+  desc: "Soy una descripción",
+}
+
+// readOnlyP.x = 2; // Error
