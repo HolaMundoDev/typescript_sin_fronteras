@@ -119,7 +119,22 @@ const estadoEliminar = new EstadoEliminar<Usuario>();
 
 // pasar el genérico fijo
 class EstadoUsuario extends Estado<Usuario>{
-  reiniciarContraseñas(): {
-    //
-  }
+  // reiniciarContraseñas(): {
+  //
 }
+
+type Calendar = {
+  id: number,
+  fuente: string,
+  dueño: string,
+}
+
+const calendar: Calendar = { id: 1, fuente: "Google", dueño: 'yo' };
+
+function getProp<T>(objeto: T, property: keyof T): unknown {
+  return objeto[property];
+}
+
+getProp<Calendar>(calendar, 'id');
+getProp<Calendar>(calendar, 'fuente');
+// getProp<Calendar>(calendar, 'propiedadQueNoExiste'); // Error
