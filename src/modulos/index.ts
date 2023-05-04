@@ -1,8 +1,11 @@
-import Group, { defaultgroups } from "./Group";
+import * as G from "./Group";
 import { Point, PUNTITO } from "./Point";
+import { Animales, Chanchitos, Caballos } from "./Animales";
+
+console.log(Animales, Chanchitos, Caballos);
 
 const point = new Point(1, 2);
-const group = new Group(1, "Chanchito Feliz");
+const group = new G.default(1, "Chanchito Feliz");
 
 console.log(PUNTITO);
-console.log(defaultgroups);
+console.log(G.defaultgroups);
