@@ -2,18 +2,22 @@ import { ChangeEventHandler, MouseEventHandler, useState } from "react";
 import Input from "../components/Input";
 import Button from "../components/Button";
 
-type UserFormState = {
+export type UserFormState = {
   name: string;
-  lastName: string;
+  username: string;
 }
 
-const Initialvalue: UserFormState = {
+const InitialValue: UserFormState = {
   name: '',
-  lastName: ''
+  username: ''
 }
 
-export default function UserForm(){
-  const [form, setForm] = useState(Initialvalue)
+interface UserFormProps {
+  handleSubmit : (user: UserFormState) => void;
+}
+
+export default function UserForm({handleSubmit} : UserFormProps) {
+  const [form, setForm] = useState(InitialValue)
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     const name = e.target.name as keyof UserFormState;
@@ -22,14 +26,15 @@ export default function UserForm(){
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
-    console.log(form)
+    handleSubmit(form)
+    setForm(InitialValue)
   }
 
   return (
     <>
-      <Input name="name" placeholder="Nombre" handleChange={handleChange}/>
-      <Input name="lastname" placeholder="Apellido" handleChange={handleChange}/>
-      <Button handleClick={handleClick}>Hola Mundo</Button>
+      <Input value={form.name} name="name" placeholder="Nombre" handleChange={handleChange}/>
+      <Input value={form.username} name="username" placeholder="Apellido" handleChange={handleChange}/>
+      <Button handleClick={handleClick}>Enviar</Button>
     </>
   )
 }
